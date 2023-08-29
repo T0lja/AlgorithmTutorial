@@ -103,7 +103,7 @@ public class ListNodeSolution {
 }
 
 class ListNode {
-    int val;
+    int val1;
     ListNode next;
 
     ListNode(int x) {

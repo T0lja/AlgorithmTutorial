@@ -4,15 +4,15 @@ import java.util.*;
 
 public class ArraySolution {
     /*
-    Examples used during testing.
-     */
-    public static int[] arr1 = {1,2,3,5,7,9};
-    public static int[] arr2 = {1,2,2,3,4,5,6,6,7,10};
-    public static int[] arr3 = {3,5,3,2,2,1,7,4};
-    public static int[] arr4 = {6,3,4,1,5};
-    public static int[] arr6 = {9,9,9};
-    public static int k = 1;
-    public static String[] arr5 = {"flower","flow","flight"};
+    === Test Data for ArraySolution ===
+    int[] arr1 = {1,2,3,5,7,9};
+    int[] arr2 = {1,2,2,3,4,5,6,6,7,10};
+    int[] arr3 = {3,5,3,2,2,1,7,4};
+    int[] arr4 = {6,3,4,1,5};
+    int[] arr6 = {9,9,9};
+    int k = 1;
+    String[] arr5 = {"flower","flow","flight"};
+    */
 
     /*
     Given two sorted arrays, find the intersection of the 2 arrays. Date 8.29

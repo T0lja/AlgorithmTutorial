@@ -1,6 +1,17 @@
 package dev.tolja;
 
 public class TreeNode {
+
+    /*
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
+        root.right.left = new TreeNode(6);
+        root.right.right = new TreeNode(7);
+        TreeNode for testing
+     */
     TreeNode left;
     TreeNode right;
 
@@ -13,7 +24,7 @@ public class TreeNode {
     }
 }
 
-class Main {
+class Solution {
     public int findDepthOfTree(TreeNode root) {
         if (root == null) {
             return 0;
@@ -37,24 +48,6 @@ class Main {
         invertTree(root.right);
 
         return root;
-    }
-
-    public static void main(String[] args) {
-
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(3);
-        root.left.left = new TreeNode(4);
-        root.left.right = new TreeNode(5);
-        root.right.left = new TreeNode(6);
-        root.right.right = new TreeNode(7);
-
-        Main main = new Main();
-        int depth = main.findDepthOfTree(root);
-        TreeNode inverted = main.invertTree(root);
-        printTree(inverted);
-
-
     }
 
     public static void printTree(TreeNode root) {

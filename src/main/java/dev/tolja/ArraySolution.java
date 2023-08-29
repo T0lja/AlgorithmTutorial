@@ -6,13 +6,13 @@ public class ArraySolution {
     /*
     Examples used during testing
      */
-    public int[] arr1 = {1,2,3,5,7,11};
-    public int[] arr2 = {1,2,2,3,4,5,6,6,7,10};
-    public int[] arr3 = {3,5,3,2,2,1,7,4};
-    public int[] arr4 = {6,3,4,1,5};
-    public int k = 1;
-    public String[] arr5 = {"flower","flow","flight"};
-
+    public static int[] arr1 = {1,2,3,5,7,9};
+    public static int[] arr2 = {1,2,2,3,4,5,6,6,7,10};
+    public static int[] arr3 = {3,5,3,2,2,1,7,4};
+    public static int[] arr4 = {6,3,4,1,5};
+    public static int[] arr6 = {9,9,9};
+    public static int k = 1;
+    public static String[] arr5 = {"flower","flow","flight"};
 
     /*
     Given 2 sorted arrays, find the intersection of the 2 arrays Date 8.29
@@ -184,6 +184,41 @@ public class ArraySolution {
         return rotated;
     }
 
+    /*
+    Given an array, remove the duplicates in place such that each element appears only once and return the new length. Date 8.29
+     */
+    public static ArrayList<Integer> removeDuplicates(int[] nums) {
+        ArrayList<Integer> result = new ArrayList<>();
+        int count = 1;
+        result.add(nums[0]);
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != nums[i - 1]) {
+                nums[count] = nums[i];
+                count++;
+                result.add(nums[i]);
+            }
+        }
+        return result;
+    }
 
+    /*
+    Given an array of an integer,add 1 to the last element and return the array. Date 8.29
+     */
+    public static int[] plusOne(int[] nums) {
+        int n = nums.length;
+
+        for (int i = n - 1; i >= 0; i--) {
+            if (nums[i] < 9) {
+                nums[i]++;
+                return nums;
+            }
+            nums[i] = 0;
+        }
+
+        int[] result = new int[n + 1];
+        result[0] = 1;
+
+        return result;
+    }
 
 }

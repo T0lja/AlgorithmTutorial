@@ -4,7 +4,7 @@ import java.util.*;
 
 public class ArraySolution {
     /*
-    Examples used during testing
+    Examples used during testing.
      */
     public static int[] arr1 = {1,2,3,5,7,9};
     public static int[] arr2 = {1,2,2,3,4,5,6,6,7,10};
@@ -15,7 +15,7 @@ public class ArraySolution {
     public static String[] arr5 = {"flower","flow","flight"};
 
     /*
-    Given 2 sorted arrays, find the intersection of the 2 arrays Date 8.29
+    Given two sorted arrays, find the intersection of the 2 arrays. Date 8.29
      */
     public static ArrayList<Integer> sortedArraysIntersection (int[] arr1, int[] arr2) {
         ArrayList<Integer> result = new ArrayList<>();
@@ -35,7 +35,7 @@ public class ArraySolution {
     }
 
     /*
-    Given 2 unsorted arrays, find the intersection of the 2 arrays Date 8.29
+    Given two unsorted arrays, find the intersection of the 2 arrays. Date 8.29
      */
     public static ArrayList<Integer> unsortedArraysIntersection(int[] arr1, int[] arr2) {
         ArrayList<Integer> result = new ArrayList<>();
@@ -59,41 +59,37 @@ public class ArraySolution {
     Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. Date 8.29
      */
     public int[] twoSum(int[] nums, int target) {
-        int n = nums.length;
-        for (int i = 0; i < n; ++i) {
-            for (int j = i + 1; j < n; ++j) {
-                if (nums[i] + nums[j] == target) {
-                    return new int[]{i, j};
-                }
+        Map<Integer, Integer> num = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+            if (num.containsKey(complement)) {
+                return new int[]{num.get(complement), i};
             }
+            num.put(nums[i], i);
         }
+
         return new int[0];
     }
 
     /*
     Given an array, find the element that appears twice. Date 8.29
      */
-    static int uniquePair(int n) {
-        int[] arr = new int[n];
-        for (int i = 0; i < n; i++) {
-            arr[i] = i + 1;
+    public int findDuplicate(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+
+        for (int num : nums) {
+            if (set.contains(num)) {
+                return num;
+            }
+            set.add(num);
         }
-        arr[arr.length - 1] = new Random().nextInt(n);
-        for (int i = 0; i < n; i++) {
-            System.out.println(arr[i] + " ");
-        }
-        int result = 0;
-        for (int i = 0; i < n; i++) {
-            result = (result^i);
-        }
-        for (int i = 0; i < n; i++) {
-            result = result^arr[i];
-        }
-        return result;
+
+        return -1;
     }
 
     /*
-    Given an array, find the longest common prefix Date 8.29
+    Given an array, find the longest common prefix. Date 8.29
      */
     public static String longestCommonPrefix(String[] strs) {
         if (strs.length == 0) return "";
@@ -108,7 +104,7 @@ public class ArraySolution {
     }
 
     /*
-    The best time to buy and sell stocks Date 8.29
+    The best time to buy and sell stocks. Date 8.29
      */
     public static int maxProfit(int[] prices) {
         int maxProfit = 0;

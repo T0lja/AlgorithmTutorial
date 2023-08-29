@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class StringSolution {
     /*
-    Given a string s, find the length of the longest substring without repeating characters. Date 8.29
+    Given a string s, finds the length of the longest substring without repeating characters using HashMap. Date 8.29
      */
     public int LengthOfLongestSubstringM1(String s) {
         HashMap<Character, Integer> map = new HashMap<>();
@@ -22,6 +22,9 @@ public class StringSolution {
         return max;
     }
 
+    /*
+    An alternative solution using sliding window approach with HashSet to find the length of the longest substring without repeating characters. Date 8.29
+     */
     public int lengthOfLongestSubstringM2(String s) {
         Set<Character> occ = new HashSet<Character>();
         int n = s.length();

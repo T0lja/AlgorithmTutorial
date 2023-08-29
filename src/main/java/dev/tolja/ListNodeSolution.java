@@ -12,11 +12,11 @@ public class ListNodeSolution {
         listNode2.next = new ListNode(3);
         listNode2.next.next = new ListNode(4);
 
-        listNodes for testing
+        listNodes for testing.
      */
 
     /*
-    Print the ListNode
+    Prints the elements of a ListNode.
      */
     public static void printListNode(ListNode head) {
         ListNode current = head;
@@ -28,7 +28,7 @@ public class ListNodeSolution {
     }
 
     /*
-    Given a ListNode, remove the n-th node from the end of list and return its head. Date 8.29
+    Given a ListNode, remove the n-th node from the end of the list and return its head. Date 8.29
      */
     public static ListNode removeNthFromEnd(ListNode head, int n) { //two pointer
         ListNode listNode = new ListNode(0);
@@ -52,7 +52,7 @@ public class ListNodeSolution {
     }
 
     /*
-    Given 2 linked lists, return the sum of the 2 linked lists. Date 8.29
+    Given 2 linkedNodes, return the sum of the 2 linkedNodes. Date 8.29
      */
     public static ListNode sumOfTwoLists(ListNode l1, ListNode l2) {
         ListNode listNode = new ListNode(0);
@@ -80,7 +80,7 @@ public class ListNodeSolution {
     }
 
     /*
-    Given a ListNode, judge whether it has a cycle in it. Date 8.29
+    Given a ListNode, checks whether it contains a cycle. Date 8.29
      */
     public static boolean hasCycle(ListNode head) { // two pointer
         if (head == null || head.next == null) {

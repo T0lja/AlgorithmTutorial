@@ -108,6 +108,34 @@ Description: This method prints the values of the binary tree in pre-order trave
 
 Approach: It's a recursive method that prints the value of the current node, then recursively prints the left subtree and the right subtree.
 
+climbStairs:
+
+Description: You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. How many distinct ways can you reach the top? Note that n is a positive integer.
+
+Approach: If n is less than or equal to 2, return n. Create an array dp of length n+1. Set dp[1] to 1 and dp[2] to 2. Iterate from 3 to n and calculate dp[i] = dp[i-1] + dp[i-2]. Finally, return dp[n].
+
+maxSubArray:
+
+Description: Given an integer array nums, you need to find a contiguous subarray (containing at least one element) with the largest sum and return the maximum sum.
+
+Approach: Initialize maxSum and currentSum both to the first element of the array, nums[0]. Start iterating from the second element of the array. At each step, update currentSum to the maximum value between the current element and the sum of currentSum and the current element. Also, update maxSum to the maximum value between maxSum and currentSum. Finally, return maxSum.
+
+lengthOfLIS:
+
+Description:
+
+Given an unordered array of integers nums, find the length of the longest increasing subsequence.
+
+Approach:
+
+This problem can be solved using dynamic programming. We create an array dp, where dp[i] represents the length of the longest increasing subsequence ending at index i of the array. We initialize all dp[i] to 1 because each element itself can form an increasing subsequence of length 1.
+
+Then, we iterate through the array nums. For each element nums[i], we look for all elements nums[j] before it that are smaller than nums[i], and we attempt to extend the increasing subsequence ending at nums[j] by adding nums[i] to it. If nums[i] is greater than nums[j], we update dp[i] to dp[j] + 1, indicating that we can extend the existing increasing subsequence by adding a larger element to it.
+
+Finally, we iterate through the entire dp array and find the maximum value, which represents the length of the longest increasing subsequence.
+
+The time complexity of this approach is O(n^2), where n is the length of the array.
+
 sortedArraysIntersection（有序数组的交集）:
 
 描述： 给定两个有序数组，此函数找到它们的交集。
@@ -212,5 +240,25 @@ printTree（打印二叉树）：
 描述：此方法以前序遍历（根-左-右）的方式打印二叉树的值。
 
 思路：这是一个递归方法，它首先打印当前节点的值，然后递归地打印左子树和右子树。
+
+climbStairs（爬楼梯问题）：
+
+描述： 你正在爬楼梯。到达顶部需要 n 个步骤。每次你可以爬 1 或 2 个台阶。问你有多少种不同的方式可以到达顶部？注意，n 是一个正整数。
+
+思路： 如果 n 小于等于 2，返回 n。创建一个数组 dp，长度为 n+1。将 dp[1] 设为 1，dp[2] 设为 2。从 3 开始遍历至 n，每次计算 dp[i] = dp[i-1] + dp[i-2]。最终返回 dp[n]。
+
+maxSubArray（最大子数组和问题）：
+
+描述： 给定一个整数数组 nums，你需要找到一个连续的子数组（至少包含一个元素），使其具有最大的和，并返回这个最大的和。
+
+思路： 初始化 maxSum 和 currentSum 都为数组第一个元素 nums[0]。从数组第二个元素开始遍历，每次更新 currentSum 为当前元素与 currentSum + 当前元素中的较大值，同时更新 maxSum 为 max(maxSum, currentSum)。最终返回 maxSum。
+
+lengthOfLIS（最长上升子序列）:
+
+描述： 给定一个无序整数数组 nums，找到最长递增子序列的长度。
+
+思路： 这个问题可以通过动态规划来解决。我们创建一个数组 dp，其中 dp[i] 表示以数组的第 i 个元素结尾的最长递增子序列的长度。我们将所有的 dp[i] 初始化为 1，因为每个元素本身都可以形成一个长度为 1 的递增子序列。
+然后，我们遍历数组 nums。对于每个元素 nums[i]，我们寻找在它之前的所有元素 nums[j]，如果它们小于 nums[i]，我们尝试将以 nums[j] 结尾的递增子序列延长，将 nums[i] 添加到其中。如果 nums[i] 大于 nums[j]，我们将 dp[i] 更新为 dp[j] + 1，表示我们可以通过添加一个较大的元素来扩展现有的递增子序列。
+最后，我们遍历整个 dp 数组并找到最大值，它表示最长递增子序列的长度。
 
 ## My email address: tolja@tolja.dev

@@ -3,11 +3,10 @@ package dev.tolja;
 import java.util.Arrays;
 
 public class DynamicProgramming {
-
-    public static void main(String[] args) {
-        int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-        System.out.println(lengthOfLIS(nums));
-    }
+    /*
+    === Test Data for ArraySolution ===
+    int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+     */
 
     /*
     You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. How many distinct ways can you reach the top? Note that n is a positive integer.Date 8.30

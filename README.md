@@ -134,7 +134,6 @@ Then, we iterate through the array nums. For each element nums[i], we look for a
 
 Finally, we iterate through the entire dp array and find the maximum value, which represents the length of the longest increasing subsequence.
 
-The time complexity of this approach is O(n^2), where n is the length of the array.
 
 sortedArraysIntersection（有序数组的交集）:
 

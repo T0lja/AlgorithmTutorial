@@ -1,11 +1,19 @@
 package dev.tolja;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class DynamicProgramming {
     /*
     === Test Data for ArraySolution ===
     int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+    List<List<Integer>> triangleData = List.of(
+                List.of(2),
+                List.of(3, 4),
+                List.of(6, 5, 7),
+                List.of(4, 1, 8, 3)
+        );
      */
 
     /*
@@ -60,4 +68,29 @@ public class DynamicProgramming {
 
         return Arrays.stream(dp).max().getAsInt();
     }
+
+    /*
+    Given a Triangle array, find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.Date 8.30
+     */
+    public static int minPathSumTriangle(List<List<Integer>> triangle) {
+        int rows = triangle.size();
+
+        int[][] dp = new int[rows][rows];
+        for (int i = 0; i < rows; i++) {
+            List<Integer> row = triangle.get(i);
+            for (int j = 0; j <= i; j++) {
+                dp[i][j] = row.get(j);
+            }
+        }
+
+        for (int i = rows - 2; i >= 0; i--) {
+            for (int j = 0; j <= i; j++) {
+                dp[i][j] = dp[i][j] + Math.min(dp[i + 1][j], dp[i + 1][j + 1]);
+            }
+        }
+
+        return dp[0][0];
+    }
 }
+
+

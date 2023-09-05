@@ -35,7 +35,4 @@ public class BitOperations {
         return result;
     }
 
-    public static void main(String[] args) {
-        System.out.println(findSingle(new int[]{1, 4, 4, 2, 2}));
-    }
 }
